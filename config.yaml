@@ -1,0 +1,148 @@
+# The cron job runner
+cron:
+  disable: true
+
+# The database configuration
+gorm:
+  default:
+    database: mysql
+    dsn: track_server_wr_test:Track#1q%ev6,@tcp(172.25.102.17:3307)/track_server?charset=utf8mb4&parseTime=True&loc=Local
+    skipDefaultTransaction: false
+    fullSaveAssociations: false
+    dryRun: false
+    prepareStmt: false
+    disableAutomaticPing: false
+    disableForeignKeyConstraintWhenMigrating: false
+    disableNestedTransaction: false
+    allowGlobalUpdate: false
+    queryFields: false
+    createBatchSize: 0
+    namingStrategy:
+      tablePrefix: ""
+      singularTable: false
+gormMetrics:
+  interval: 15s
+
+# The version of the application
+version: 0.1.0
+
+# The gRPC address
+grpc:
+  addr: :9090
+  disable: false
+
+# The http address
+http:
+  addr: :8080
+  disable: false
+
+# The global logging level and format
+log:
+  format: logfmt
+  level: debug
+
+# The environment of the application, one of production, development, staging, testing or local
+env: local
+
+# The name of the application
+name: app
+
+# The configuration of redis clients
+redis:
+  default:
+    addrs:
+      - 172.25.102.70:7000
+      - 172.25.102.71:7000
+      - 172.25.102.72:7000
+      - 172.25.102.75:7000
+      - 172.25.102.76:7000
+    db: 0
+    username: ""
+    password: ""
+    sentinelPassword: ""
+    maxRetries: 0
+    minRetryBackoff: 0s
+    maxRetryBackoff: 0s
+    dialTimeout: 0s
+    readTimeout: 0s
+    writeTimeout: 0s
+    poolSize: 0
+    minIdleConns: 0
+    maxConnAge: 0s
+    poolTimeout: 0s
+    idleTimeout: 0s
+    idleCheckFrequency: 0s
+    maxRedirects: 0
+    readOnly: false
+    routeByLatency: false
+    routeRandomly: false
+    masterName: ""
+redisMetrics:
+  interval: 15s
+
+
+kafka:
+  reader:
+    default:
+      brokers:
+        - 192.168.82.3:9092
+      groupID: "123"
+      topic: "test"
+      partition: 0
+      queue_capacity: 0
+      minBytes: 0
+      maxBytes: 0
+      maxWait: 0s
+      readLagInterval: 0s
+      heartbeatInterval: 0s
+      commitInterval: 0s
+      partitionWatchInterval: 0s
+      watchPartitionChanges: false
+      sessionTimeout: 0s
+      rebalanceTimeout: 0s
+      joinGroupBackoff: 0s
+      retentionTime: 0s
+      startOffset: -1
+      readBackoffMin: 0s
+      readBackoffMax: 0s
+      maxAttempts: 0
+    foo:
+      brokers:
+        - 192.168.82.3:9092
+      groupID: "444"
+      topic: "test"
+      partition: 0
+      queue_capacity: 0
+      minBytes: 0
+      maxBytes: 0
+      maxWait: 0s
+      readLagInterval: 0s
+      heartbeatInterval: 0s
+      commitInterval: 0s
+      partitionWatchInterval: 0s
+      watchPartitionChanges: false
+      sessionTimeout: 0s
+      rebalanceTimeout: 0s
+      joinGroupBackoff: 0s
+      retentionTime: 0s
+      startOffset: -1
+      readBackoffMin: 0s
+      readBackoffMax: 0s
+      maxAttempts: 0
+  writer:
+    default:
+      brokers:
+        - 192.168.82.3:9092
+      topic: "test"
+      maxAttempts: 10
+      batchSize: 1000
+      batchBytes: 1000
+      batchTimeout: 5s
+      readTimeout: 5s
+      writeTimeout: 5s
+      rebalanceInterval: 60s
+      requiredAcks: 0
+      async: false
+kafkaMetrics:
+  interval: 15s
+
