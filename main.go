@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/GGXXLL/core-kafka/internal/bootstrap"
 	"log"
 	"math/rand"
 	"time"
+
+	"github.com/GGXXLL/core-process/internal/bootstrap"
 )
 
 func main() {

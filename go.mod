@@ -1,4 +1,4 @@
-module github.com/GGXXLL/core-kafka
+module github.com/GGXXLL/core-process
 
 go 1.16
 

@@ -6,8 +6,8 @@ import (
 	"github.com/DoNewsCode/core/otgorm"
 	"github.com/DoNewsCode/core/otkafka"
 	"github.com/DoNewsCode/core/srvhttp"
-	"github.com/GGXXLL/core-kafka/handler"
-	"github.com/GGXXLL/core-kafka/internal/process"
+	"github.com/GGXXLL/core-process/handler"
+	"github.com/GGXXLL/core-process/internal/process"
 )
 
 // Register the global options includes modules, module constructors and global dependencies

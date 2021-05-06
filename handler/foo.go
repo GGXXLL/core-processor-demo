@@ -3,8 +3,9 @@ package handler
 import (
 	"context"
 	"encoding/json"
-	"github.com/GGXXLL/core-kafka/entity"
-	"github.com/GGXXLL/core-kafka/internal/process"
+
+	"github.com/GGXXLL/core-process/entity"
+	"github.com/GGXXLL/core-process/internal/process"
 	"github.com/go-kit/kit/log"
 	"github.com/segmentio/kafka-go"
 )

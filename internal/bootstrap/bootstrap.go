@@ -1,11 +1,12 @@
 package bootstrap
 
 import (
-	"github.com/DoNewsCode/core"
-	"github.com/GGXXLL/core-kafka/internal/cmd"
-	"github.com/GGXXLL/core-kafka/internal/config"
-	"github.com/spf13/cobra"
 	"os"
+
+	"github.com/DoNewsCode/core"
+	"github.com/GGXXLL/core-process/internal/cmd"
+	"github.com/GGXXLL/core-process/internal/config"
+	"github.com/spf13/cobra"
 )
 
 // Bootstrap Project initiated
