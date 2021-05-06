@@ -8,4 +8,5 @@ require (
 	github.com/oklog/run v1.1.0
 	github.com/segmentio/kafka-go v0.4.10
 	github.com/spf13/cobra v1.1.3
+	gorm.io/gorm v1.20.12 // indirect
 )

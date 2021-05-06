@@ -16,13 +16,18 @@ type Process struct {
 }
 
 type H interface {
+	// Handler decode the *kafka.Message and filter
 	Handler(ctx context.Context, msg *kafka.Message) (interface{}, error)
-	Batch(ctx context.Context, ch chan interface{}) error
-	Name() string
+	// Batch processing of decoded or filtered data
+	//
+	// Note: if sequence is necessary, make sure that batch workers count is one
+	Batch(ctx context.Context, data []interface{}) error
+	// Info define the topic name and some config
+	Info() *Info
 }
 
 type HandlerFunc func(ctx context.Context, msg *kafka.Message) (interface{}, error)
-type BatchFunc func(ctx context.Context, ch chan interface{}) error
+type BatchFunc func(ctx context.Context, data []interface{}) error
 
 type in struct {
 	di.In
@@ -53,12 +58,13 @@ func NewProcess(i in) (*Process, error) {
 }
 
 func (e *Process) addHandler(h H) error {
-	_, err := e.maker.Make(h.Name())
+	name := h.Info().name()
+	_, err := e.maker.Make(name)
 	if err != nil {
 		return err
 	}
 
-	e.handlers[h.Name()] = h
+	e.handlers[name] = h
 	return nil
 }
 
@@ -68,65 +74,117 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 	}
 	ctx, cancel := context.WithCancel(context.Background())
 
-	for _, one := range e.handlers {
-		msgChan := make(chan *kafka.Message, 200)
-		batchChan := make(chan interface{}, 200)
+	var g run.Group
+	msgChs := make([]chan *kafka.Message, 0)
+	batchChs := make([]chan interface{}, 0)
 
-		group.Add(func() error {
-			reader, err := e.maker.Make(one.Name())
-			if err != nil {
-				return err
-			}
-			for {
-				select {
-				case <-ctx.Done():
-					return nil
-				default:
-					message, err := reader.ReadMessage(ctx)
-					if err != nil {
-						return err
-					}
-					if len(message.Value) > 0 {
-						msgChan <- &message
+	for name, ooo := range e.handlers {
+		one := ooo
+
+		msgCh := make(chan *kafka.Message, one.Info().chanSize())
+		batchCh := make(chan interface{}, one.Info().chanSize())
+		msgChs = append(msgChs, msgCh)
+		batchChs = append(batchChs, batchCh)
+
+		reader, _ := e.maker.Make(name)
+
+		for i := 0; i < one.Info().readWorker(); i++ {
+			g.Add(func() error {
+				for {
+					select {
+					case <-ctx.Done():
+						return nil
+					default:
+						message, err := reader.ReadMessage(ctx)
+						if err != nil {
+							return err
+						}
+						if len(message.Value) > 0 {
+							msgCh <- &message
+						}
 					}
 				}
-			}
-		}, func(err error) {
-			cancel()
-			close(msgChan)
-			return
-		})
-		group.Add(func() error {
-			for {
-				select {
-				case msg := <-msgChan:
-					v, err := one.Handler(ctx, msg)
-					if err != nil {
-						return err
-					}
-					if v != nil {
-						batchChan <- v
-					}
-				case <-ctx.Done():
-					return nil
-				}
-			}
-		}, func(err error) {
-			cancel()
-			close(batchChan)
-			return
-		})
+			}, func(err error) {
 
-		group.Add(func() error {
-			err := one.Batch(ctx, batchChan)
-			if err != nil {
-				return err
+			})
+		}
+
+		for i := 0; i < one.Info().handleWorker(); i++ {
+			g.Add(func() error {
+				for {
+					select {
+					case msg := <-msgCh:
+						v, err := one.Handler(ctx, msg)
+						if err != nil {
+							return err
+						}
+						if v != nil {
+							batchCh <- v
+						}
+					case <-ctx.Done():
+						return nil
+					}
+				}
+			}, func(err error) {
+
+			})
+		}
+
+		for i := 0; i < one.Info().batchWorker(); i++ {
+			g.Add(func() error {
+				err := e.batch(ctx, batchCh, one.Batch, one.Info().batchSize())
+				if err != nil {
+					return err
+				}
+				return nil
+			}, func(err error) {
+
+			})
+		}
+	}
+
+	group.Add(func() error {
+		if err := g.Run(); err != nil {
+			return err
+		}
+		return nil
+	}, func(err error) {
+		cancel()
+		for _, ch := range msgChs {
+			close(ch)
+		}
+		for _, ch := range batchChs {
+			close(ch)
+		}
+	})
+
+}
+
+func (e *Process) batch(ctx context.Context, ch chan interface{}, batchFunc BatchFunc, batchSize int) error {
+	var l = make([]interface{}, 0)
+	for {
+		select {
+		case v := <-ch:
+			l = append(l, v)
+			if len(l) >= batchSize {
+				// do something, such as batch insert to db
+				if err := batchFunc(ctx, l); err != nil {
+					return err
+				}
+				l = l[0:0]
+			}
+		case <-ctx.Done():
+			for v := range ch {
+				l = append(l, v)
+			}
+			if len(l) > 0 {
+				// do something
+				if err := batchFunc(ctx, l); err != nil {
+					return err
+				}
+				l = l[0:0]
 			}
 			return nil
-		}, func(err error) {
-			cancel()
-			return
-		})
-
+		}
 	}
 }
