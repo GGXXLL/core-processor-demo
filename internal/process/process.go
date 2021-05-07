@@ -69,6 +69,11 @@ func (e *Process) addHandler(h H) error {
 	return nil
 }
 
+type batchInfo struct {
+	message *kafka.Message
+	data    interface{}
+}
+
 func (e *Process) ProvideRunGroup(group *run.Group) {
 	if len(e.handlers) == 0 {
 		return
@@ -77,13 +82,13 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 
 	var g run.Group
 	msgChs := make([]chan *kafka.Message, 0)
-	batchChs := make([]chan interface{}, 0)
+	batchChs := make([]chan *batchInfo, 0)
 
 	for name, ooo := range e.handlers {
 		one := ooo
 
 		msgCh := make(chan *kafka.Message, one.Info().chanSize())
-		batchCh := make(chan interface{}, one.Info().chanSize())
+		batchCh := make(chan *batchInfo, one.Info().chanSize())
 		msgChs = append(msgChs, msgCh)
 		batchChs = append(batchChs, batchCh)
 
@@ -96,7 +101,7 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 					case <-ctx.Done():
 						return nil
 					default:
-						message, err := reader.ReadMessage(ctx)
+						message, err := reader.FetchMessage(ctx)
 						if err != nil {
 							return err
 						}
@@ -120,7 +125,7 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 							return err
 						}
 						if v != nil {
-							batchCh <- v
+							batchCh <- &batchInfo{message: msg, data: v}
 						}
 					case <-ctx.Done():
 						return nil
@@ -133,7 +138,7 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 
 		for i := 0; i < one.Info().batchWorker(); i++ {
 			g.Add(func() error {
-				err := e.batch(ctx, batchCh, one.Batch, one.Info().batchSize())
+				err := e.batch(ctx, reader, batchCh, one.Batch, one.Info().batchSize())
 				if err != nil {
 					return err
 				}
@@ -161,29 +166,40 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 
 }
 
-func (e *Process) batch(ctx context.Context, ch chan interface{}, batchFunc BatchFunc, batchSize int) error {
-	var l = make([]interface{}, 0)
+func (e *Process) batch(ctx context.Context, reader *kafka.Reader, ch chan *batchInfo, batchFunc BatchFunc, batchSize int) error {
+	var data = make([]interface{}, 0)
+	var msgs = make([]kafka.Message, 0)
 	for {
 		select {
 		case v := <-ch:
-			l = append(l, v)
-			if len(l) >= batchSize {
+			data = append(data, v.data)
+			msgs = append(msgs, *v.message)
+			if len(data) >= batchSize {
 				// do something, such as batch insert to db
-				if err := batchFunc(ctx, l); err != nil {
+				if err := batchFunc(ctx, data); err != nil {
 					return err
 				}
-				l = l[0:0]
+				if err := reader.CommitMessages(context.Background(), msgs...); err != nil {
+					return err
+				}
+				data = data[0:0]
+				msgs = msgs[0:0]
 			}
 		case <-ctx.Done():
 			for v := range ch {
-				l = append(l, v)
+				data = append(data, v)
+				msgs = append(msgs, *v.message)
 			}
-			if len(l) > 0 {
+			if len(data) > 0 {
 				// do something
-				if err := batchFunc(ctx, l); err != nil {
+				if err := batchFunc(ctx, data); err != nil {
 					return err
 				}
-				l = l[0:0]
+				if err := reader.CommitMessages(context.Background(), msgs...); err != nil {
+					return err
+				}
+				data = data[0:0]
+				msgs = msgs[0:0]
 			}
 			return nil
 		}

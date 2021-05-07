@@ -39,7 +39,11 @@ func (h *defaultHandler) Handler(ctx context.Context, msg *kafka.Message) (inter
 
 func (h *defaultHandler) Batch(ctx context.Context, data []interface{}) error {
 	// batch insert to mysql
-	if err := h.db.Table("example").Save(data).Error; err != nil {
+	rdata := make([]*entity.Example, len(data))
+	for i, e := range data {
+		rdata[i] = e.(*entity.Example)
+	}
+	if err := h.db.Table("example").Save(rdata).Error; err != nil {
 		return err
 	}
 	return nil
