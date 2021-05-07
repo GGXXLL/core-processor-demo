@@ -124,9 +124,7 @@ func (e *Process) ProvideRunGroup(group *run.Group) {
 						if err != nil {
 							return err
 						}
-						if v != nil {
-							batchCh <- &batchInfo{message: msg, data: v}
-						}
+						batchCh <- &batchInfo{message: msg, data: v}
 					case <-ctx.Done():
 						return nil
 					}
