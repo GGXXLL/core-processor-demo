@@ -1,7 +1,10 @@
 package entity
 
+import "gorm.io/gorm"
+
 // Example {"id":1,"name":"test"}
 type Example struct {
-	Id   int    `json:"id"`
+	gorm.Model
+
 	Name string `json:"name"`
 }

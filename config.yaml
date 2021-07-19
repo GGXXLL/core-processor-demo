@@ -43,8 +43,8 @@ kafkaMetrics:
 # The database configuration
 gorm:
   default:
-    database: mysql
-    dsn: root@tcp(127.0.0.1:3306)/app?charset=utf8mb4&parseTime=True&loc=Local
+    database: sqlite
+    dsn: ":memory:"
 gormMetrics:
   interval: 15s
 

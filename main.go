@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/GGXXLL/core-process/internal/bootstrap"
+	"github.com/GGXXLL/core-processor-demo/internal/bootstrap"
 )
 
 func main() {
