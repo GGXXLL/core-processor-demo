@@ -3,9 +3,9 @@ package handler
 import (
 	"context"
 	"encoding/json"
+	processor "github.com/DoNewsCode/core-processor"
 	"github.com/DoNewsCode/core/contract"
 
-	"github.com/DoNewsCode/core/otkafka/processor"
 	"github.com/GGXXLL/core-processor-demo/entity"
 	"github.com/go-kit/kit/log"
 	"github.com/segmentio/kafka-go"

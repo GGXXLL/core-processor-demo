@@ -2,12 +2,12 @@ package handler
 
 import (
 	"github.com/GGXXLL/core-processor-demo/entity"
-	"gorm.io/driver/mysql"
+	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )
 
 func setupDB() (*gorm.DB, func()) {
-	db, err := gorm.Open(mysql.Open(":memory:"))
+	db, err := gorm.Open(sqlite.Open("file::memory:?cache=shared"))
 	if err != nil {
 		panic(err)
 	}

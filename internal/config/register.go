@@ -2,10 +2,10 @@ package config
 
 import (
 	"github.com/DoNewsCode/core"
+	processor "github.com/DoNewsCode/core-processor"
 	"github.com/DoNewsCode/core/config"
 	"github.com/DoNewsCode/core/otgorm"
 	"github.com/DoNewsCode/core/otkafka"
-	"github.com/DoNewsCode/core/otkafka/processor"
 	"github.com/DoNewsCode/core/srvhttp"
 	"github.com/GGXXLL/core-processor-demo/handler"
 )
