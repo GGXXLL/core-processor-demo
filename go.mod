@@ -14,6 +14,6 @@ require (
 	github.com/spf13/cobra v1.2.1
 	github.com/stretchr/testify v1.7.0
 	go.uber.org/atomic v1.9.0 // indirect
-	gorm.io/driver/sqlite v1.1.4
+	gorm.io/driver/sqlite v1.1.5
 	gorm.io/gorm v1.21.15
 )
