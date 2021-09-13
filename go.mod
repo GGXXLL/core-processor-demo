@@ -3,7 +3,7 @@ module github.com/GGXXLL/core-processor-demo
 go 1.16
 
 require (
-	github.com/DoNewsCode/core v0.9.0
+	github.com/DoNewsCode/core v0.9.1
 	github.com/DoNewsCode/core-processor v0.1.1
 	github.com/go-kit/kit v0.11.0
 	github.com/golang/snappy v0.0.4 // indirect
