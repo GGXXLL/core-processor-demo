@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
+	"github.com/DoNewsCode/core/logging"
 	"github.com/ggxxll/core-processor-demo/entity"
 	"github.com/go-kit/kit/log"
 	"github.com/segmentio/kafka-go"
@@ -18,7 +19,7 @@ func Test_defaultHandler_Handle(t *testing.T) {
 	}
 	b, _ := json.Marshal(data)
 
-	handler := defaultHandler{logger: log.NewNopLogger()}
+	handler := defaultHandler{logger: logging.WithLevel(log.NewNopLogger())}
 	res, err := handler.Handle(context.Background(), &kafka.Message{Value: b})
 	assert.NoError(t, err)
 
@@ -28,7 +29,7 @@ func Test_defaultHandler_Handle(t *testing.T) {
 func Test_defaultHandler_Batch(t *testing.T) {
 	db, closer := setupDB()
 	defer closer()
-	handler := defaultHandler{logger: log.NewNopLogger(), db: db}
+	handler := defaultHandler{logger: logging.WithLevel(log.NewNopLogger()), db: db}
 	data := []interface{}{
 		&entity.Example{
 			Name: "test1",
