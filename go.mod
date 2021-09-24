@@ -5,7 +5,6 @@ go 1.17
 require (
 	github.com/DoNewsCode/core v0.9.2
 	github.com/DoNewsCode/core-processor v0.1.1
-	github.com/GGXXLL/core-processor-demo v0.0.0-20210922012024-5d0fa528def8
 	github.com/go-kit/kit v0.12.0
 	github.com/segmentio/kafka-go v0.4.20
 	github.com/spf13/cobra v1.2.1
@@ -54,12 +53,12 @@ require (
 	github.com/prometheus/procfs v0.7.3 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	go.uber.org/dig v1.12.0 // indirect
+	go.uber.org/dig v1.13.0 // indirect
 	golang.org/x/net v0.0.0-20210917221730-978cfadd31cf // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20210917161153-d61c044b1678 // indirect
 	golang.org/x/text v0.3.7 // indirect
-	google.golang.org/genproto v0.0.0-20210917145530-b395a37504d4 // indirect
+	google.golang.org/genproto v0.0.0-20210924002016-3dee208752a0 // indirect
 	google.golang.org/grpc v1.40.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

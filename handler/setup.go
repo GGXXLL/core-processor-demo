@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/GGXXLL/core-processor-demo/entity"
+	"github.com/ggxxll/core-processor-demo/entity"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
 )

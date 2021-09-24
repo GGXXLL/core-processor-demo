@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/GGXXLL/core-processor-demo/entity"
+	"github.com/ggxxll/core-processor-demo/entity"
 	"github.com/go-kit/kit/log"
 	"github.com/segmentio/kafka-go"
 	"github.com/stretchr/testify/assert"

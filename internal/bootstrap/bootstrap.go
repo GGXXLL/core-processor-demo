@@ -4,8 +4,8 @@ import (
 	"os"
 
 	"github.com/DoNewsCode/core"
-	"github.com/GGXXLL/core-processor-demo/internal/cmd"
-	"github.com/GGXXLL/core-processor-demo/internal/config"
+	"github.com/ggxxll/core-processor-demo/internal/cmd"
+	"github.com/ggxxll/core-processor-demo/internal/config"
 	"github.com/spf13/cobra"
 )
 
