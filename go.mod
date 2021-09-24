@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/DoNewsCode/core v0.9.2
-	github.com/DoNewsCode/core-processor v0.1.1
+	github.com/DoNewsCode/core-processor v0.2.1
 	github.com/go-kit/kit v0.12.0
 	github.com/segmentio/kafka-go v0.4.20
 	github.com/spf13/cobra v1.2.1
@@ -19,6 +19,7 @@ require (
 	github.com/cespare/xxhash/v2 v2.1.2 // indirect
 	github.com/cloudflare/golz4 v0.0.0-20150217214814-ef862a3cdc58 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/denisenkom/go-mssqldb v0.9.0 // indirect
 	github.com/felixge/httpsnoop v1.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/go-gormigrate/gormigrate/v2 v2.0.0 // indirect
@@ -27,11 +28,13 @@ require (
 	github.com/go-sql-driver/mysql v1.5.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/golang/snappy v0.0.4 // indirect
+	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/gorilla/handlers v1.5.1 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/hashicorp/go-version v1.3.0 // indirect
 	github.com/heptiolabs/healthcheck v0.0.0-20180807145615-6ff867650f40 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/jackc/pgx/v4 v4.11.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
@@ -58,6 +61,7 @@ require (
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20210917161153-d61c044b1678 // indirect
 	golang.org/x/text v0.3.7 // indirect
+	golang.org/x/tools v0.1.5 // indirect
 	google.golang.org/genproto v0.0.0-20210924002016-3dee208752a0 // indirect
 	google.golang.org/grpc v1.40.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
