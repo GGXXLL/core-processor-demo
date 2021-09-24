@@ -3,7 +3,9 @@ package handler
 import (
 	"context"
 	"encoding/json"
+
 	processor "github.com/DoNewsCode/core-processor"
+	"github.com/DoNewsCode/core/logging"
 
 	"github.com/GGXXLL/core-processor-demo/entity"
 	"github.com/go-kit/kit/log"
@@ -12,12 +14,12 @@ import (
 
 // fooHandler implement processor.Handler
 type fooHandler struct {
-	logger log.Logger
+	logger logging.LevelLogger
 }
 
 func newFooHandler(logger log.Logger) processor.Out {
 	return processor.NewOut(
-		&fooHandler{logger: logger},
+		&fooHandler{logger: logging.WithLevel(logger)},
 	)
 }
 
@@ -34,6 +36,7 @@ func (h *fooHandler) Handle(ctx context.Context, msg *kafka.Message) (interface{
 	// decode
 	e := entity.Example{}
 	if err := json.Unmarshal(msg.Value, &e); err != nil {
+		h.logger.Err(err)
 		return nil, err
 	}
 

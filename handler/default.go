@@ -3,8 +3,10 @@ package handler
 import (
 	"context"
 	"encoding/json"
+
 	processor "github.com/DoNewsCode/core-processor"
 	"github.com/DoNewsCode/core/contract"
+	"github.com/DoNewsCode/core/logging"
 
 	"github.com/GGXXLL/core-processor-demo/entity"
 	"github.com/go-kit/kit/log"
@@ -14,14 +16,14 @@ import (
 
 // defaultHandler implement processor.BatchHandler
 type defaultHandler struct {
-	logger log.Logger
+	logger logging.LevelLogger
 	db     *gorm.DB
 	env    contract.Env
 }
 
 func newDefaultHandler(logger log.Logger, db *gorm.DB, env contract.Env) processor.Out {
 	return processor.NewOut(
-		&defaultHandler{logger, db, env},
+		&defaultHandler{logging.WithLevel(logger), db, env},
 	)
 }
 
@@ -42,6 +44,7 @@ func (h *defaultHandler) Info() *processor.Info {
 func (h *defaultHandler) Handle(ctx context.Context, msg *kafka.Message) (interface{}, error) {
 	e := entity.Example{}
 	if err := json.Unmarshal(msg.Value, &e); err != nil {
+		h.logger.Err(err)
 		return nil, err
 	}
 	return &e, nil
@@ -54,6 +57,7 @@ func (h *defaultHandler) Batch(ctx context.Context, data []interface{}) error {
 		rdata[i] = e.(*entity.Example)
 	}
 	if err := h.db.Table("examples").Save(rdata).Error; err != nil {
+		h.logger.Err(err)
 		return err
 	}
 	return nil
