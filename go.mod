@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/DoNewsCode/core v0.9.2
 	github.com/DoNewsCode/core-processor v0.1.1
-	github.com/GGXXLL/core-processor-demo v0.0.0-20210922012024-5d0fa528def8
+	github.com/GGXXLL/core-processor-demo 324dd459c226
 	github.com/go-kit/kit v0.12.0
 	github.com/segmentio/kafka-go v0.4.20
 	github.com/spf13/cobra v1.2.1
