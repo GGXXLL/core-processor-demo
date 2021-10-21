@@ -45,6 +45,8 @@ github.com/ClickHouse/clickhouse-go v1.4.5/go.mod h1:EaI/sW7Azgz9UATzd5ZdZHRUhHg
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DoNewsCode/core v0.9.2 h1:firHkklBFkdNbtX/YGcaIjgY+fQ9pne4uwCZVfpJ1Gk=
 github.com/DoNewsCode/core v0.9.2/go.mod h1:XXq48g0t3QG0czqtuqtIU72Lc56Na9sK094Zd4imIrg=
+github.com/DoNewsCode/core v0.10.2 h1:uBaBdqlNEIfyPVOvOTs86evjdYQNssqpZZoUDbGZQRw=
+github.com/DoNewsCode/core v0.10.2/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
 github.com/DoNewsCode/core-processor v0.2.1 h1:TMnlbrlmvBpCkK+vlpMB9evj/bnRLOGVzNvGr8pJgeA=
 github.com/DoNewsCode/core-processor v0.2.1/go.mod h1:9FuG2KOwayPZ34w7IoJEwwkqTID4viqb0k2FOyBXP28=
 github.com/HdrHistogram/hdrhistogram-go v1.0.1/go.mod h1:BWJ+nMSHY3L41Zj7CA3uXnloDp7xxV0YvstAE7nKTaM=
