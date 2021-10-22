@@ -9,8 +9,8 @@ require (
 	github.com/segmentio/kafka-go v0.4.20
 	github.com/spf13/cobra v1.2.1
 	github.com/stretchr/testify v1.7.0
+	gorm.io/gorm v1.21.16
 	gorm.io/driver/sqlite v1.1.6
-	gorm.io/gorm v1.21.15
 )
 
 require (
