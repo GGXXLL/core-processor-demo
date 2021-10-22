@@ -45,6 +45,8 @@ github.com/ClickHouse/clickhouse-go v1.4.5/go.mod h1:EaI/sW7Azgz9UATzd5ZdZHRUhHg
 github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3tL4fMGNddJ+vMq1mwgfaqoQ=
 github.com/DoNewsCode/core v0.9.2 h1:firHkklBFkdNbtX/YGcaIjgY+fQ9pne4uwCZVfpJ1Gk=
 github.com/DoNewsCode/core v0.9.2/go.mod h1:XXq48g0t3QG0czqtuqtIU72Lc56Na9sK094Zd4imIrg=
+github.com/DoNewsCode/core v0.10.2 h1:uBaBdqlNEIfyPVOvOTs86evjdYQNssqpZZoUDbGZQRw=
+github.com/DoNewsCode/core v0.10.2/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
 github.com/DoNewsCode/core-processor v0.2.1 h1:TMnlbrlmvBpCkK+vlpMB9evj/bnRLOGVzNvGr8pJgeA=
 github.com/DoNewsCode/core-processor v0.2.1/go.mod h1:9FuG2KOwayPZ34w7IoJEwwkqTID4viqb0k2FOyBXP28=
 github.com/HdrHistogram/hdrhistogram-go v1.0.1/go.mod h1:BWJ+nMSHY3L41Zj7CA3uXnloDp7xxV0YvstAE7nKTaM=
@@ -1321,6 +1323,8 @@ gorm.io/driver/sqlite v1.1.1/go.mod h1:hm2olEcl8Tmsc6eZyxYSeznnsDaMqamBvEXLNtBg4
 gorm.io/driver/sqlite v1.1.4/go.mod h1:mJCeTFr7+crvS+TRnWc5Z3UvwxUN1BGBLMrf5LA9DYw=
 gorm.io/driver/sqlite v1.1.5 h1:JU8G59VyKu1x1RMQgjefQnkZjDe9wHc1kARDZPu5dZs=
 gorm.io/driver/sqlite v1.1.5/go.mod h1:NpaYMcVKEh6vLJ47VP6T7Weieu4H1Drs3dGD/K6GrGc=
+gorm.io/driver/sqlite v1.1.6 h1:p3U8WXkVFTOLPED4JjrZExfndjOtya3db8w9/vEMNyI=
+gorm.io/driver/sqlite v1.1.6/go.mod h1:W8LmC/6UvVbHKah0+QOC7Ja66EaZXHwUTjgXY8YNWX8=
 gorm.io/driver/sqlserver v1.0.2/go.mod h1:gb0Y9QePGgqjzrVyTQUZeh9zkd5v0iz71cM1B4ZycEY=
 gorm.io/driver/sqlserver v1.0.7 h1:uwUtb0kdFwW5PkRbd2KJ2h4wlsqvLSjox1XVg/RnzRE=
 gorm.io/driver/sqlserver v1.0.7/go.mod h1:ng66aHI47ZIKz/vvnxzDoonzmTS8HXP+JYlgg67wOog=
