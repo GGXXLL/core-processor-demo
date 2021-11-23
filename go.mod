@@ -9,8 +9,8 @@ require (
 	github.com/segmentio/kafka-go v0.4.22
 	github.com/spf13/cobra v1.2.1
 	github.com/stretchr/testify v1.7.0
-	gorm.io/gorm v1.21.16
-	gorm.io/driver/sqlite v1.1.6
+	gorm.io/driver/sqlite v1.2.6
+	gorm.io/gorm v1.22.3
 )
 
 require (
@@ -39,7 +39,7 @@ require (
 	github.com/jinzhu/now v1.1.2 // indirect
 	github.com/klauspost/compress v1.13.6 // indirect
 	github.com/knadh/koanf v1.2.3 // indirect
-	github.com/mattn/go-sqlite3 v1.14.8 // indirect
+	github.com/mattn/go-sqlite3 v1.14.9 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
 	github.com/mitchellh/mapstructure v1.4.2 // indirect
