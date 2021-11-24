@@ -47,6 +47,8 @@ github.com/DoNewsCode/core v0.9.2 h1:firHkklBFkdNbtX/YGcaIjgY+fQ9pne4uwCZVfpJ1Gk
 github.com/DoNewsCode/core v0.9.2/go.mod h1:XXq48g0t3QG0czqtuqtIU72Lc56Na9sK094Zd4imIrg=
 github.com/DoNewsCode/core v0.10.2 h1:uBaBdqlNEIfyPVOvOTs86evjdYQNssqpZZoUDbGZQRw=
 github.com/DoNewsCode/core v0.10.2/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
+github.com/DoNewsCode/core v0.10.4 h1:DfJbyWhSmkkAQ1O9CxjuxZhYhS9PXBrS2Qy2RGTFgjE=
+github.com/DoNewsCode/core v0.10.4/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
 github.com/DoNewsCode/core-processor v0.2.1 h1:TMnlbrlmvBpCkK+vlpMB9evj/bnRLOGVzNvGr8pJgeA=
 github.com/DoNewsCode/core-processor v0.2.1/go.mod h1:9FuG2KOwayPZ34w7IoJEwwkqTID4viqb0k2FOyBXP28=
 github.com/HdrHistogram/hdrhistogram-go v1.0.1/go.mod h1:BWJ+nMSHY3L41Zj7CA3uXnloDp7xxV0YvstAE7nKTaM=
@@ -728,6 +730,8 @@ github.com/segmentio/kafka-go v0.4.20 h1:bcsboEoRXydZQL1cbd5ziPSwek2vOpR6PniYurF
 github.com/segmentio/kafka-go v0.4.20/go.mod h1:19+Eg7KwrNKy/PFhiIthEPkO8k+ac7/ZYXwYM9Df10w=
 github.com/segmentio/kafka-go v0.4.22 h1:F4k2OTm9Y4+zliuoXgNKJZTktE0miQioZZzofsjhRdk=
 github.com/segmentio/kafka-go v0.4.22/go.mod h1:XzMcoMjSzDGHcIwpWUI7GB43iKZ2fTVmryPSGLf/MPg=
+github.com/segmentio/kafka-go v0.4.25 h1:QVx9yz12syKBFkxR+dVDDwTO0ItHgnjjhIdBfqizj+8=
+github.com/segmentio/kafka-go v0.4.25/go.mod h1:XzMcoMjSzDGHcIwpWUI7GB43iKZ2fTVmryPSGLf/MPg=
 github.com/shopspring/decimal v0.0.0-20180709203117-cd690d0c9e24/go.mod h1:M+9NzErvs504Cn4c5DxATwIqPbtswREoFCre64PpcG4=
 github.com/shopspring/decimal v0.0.0-20200227202807-02e2044944cc/go.mod h1:DKyhrW/HYNuLGql+MJL6WCR6knT2jwCFRcu2hWCYk4o=
 github.com/shurcooL/sanitized_anchor_name v1.0.0/go.mod h1:1NzhyTcUVG4SuEtjjoZeVRXNmyL/1OwPU0+IJeTBvfc=
