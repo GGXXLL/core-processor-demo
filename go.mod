@@ -6,7 +6,7 @@ require (
 	github.com/DoNewsCode/core v0.10.2
 	github.com/DoNewsCode/core-processor v0.2.1
 	github.com/go-kit/kit v0.12.0
-	github.com/segmentio/kafka-go v0.4.22
+	github.com/segmentio/kafka-go v0.4.25
 	github.com/spf13/cobra v1.2.1
 	github.com/stretchr/testify v1.7.0
 	gorm.io/gorm v1.21.16
