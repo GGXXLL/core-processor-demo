@@ -6,7 +6,7 @@ require (
 	github.com/DoNewsCode/core v0.11.1
 	github.com/DoNewsCode/core-processor v0.2.5
 	github.com/go-kit/kit v0.12.0
-	github.com/segmentio/kafka-go v0.4.26
+	github.com/segmentio/kafka-go v0.4.30
 	github.com/spf13/cobra v1.3.0
 	github.com/stretchr/testify v1.7.0
 	gorm.io/driver/sqlite v1.1.6
@@ -36,7 +36,7 @@ require (
 	github.com/jackc/pgx/v4 v4.11.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.2 // indirect
-	github.com/klauspost/compress v1.14.1 // indirect
+	github.com/klauspost/compress v1.14.2 // indirect
 	github.com/knadh/koanf v1.4.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.8 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
@@ -47,6 +47,7 @@ require (
 	github.com/opentracing-contrib/go-stdlib v1.0.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
 	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
+	github.com/pierrec/lz4/v4 v4.1.14 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.11.0 // indirect
