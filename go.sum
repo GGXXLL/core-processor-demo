@@ -58,6 +58,8 @@ github.com/DoNewsCode/core v0.10.4 h1:DfJbyWhSmkkAQ1O9CxjuxZhYhS9PXBrS2Qy2RGTFgj
 github.com/DoNewsCode/core v0.10.4/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
 github.com/DoNewsCode/core v0.11.1 h1:Q1iPIJHMuFxh3SULXhbA2ASzHvwd8Y11Vgc4H/xc2I8=
 github.com/DoNewsCode/core v0.11.1/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
+github.com/DoNewsCode/core v0.12.1 h1:wvXtpv15GKYPCdGxwAxmyQsX4yR2ZbKthxfkI+Q2aBo=
+github.com/DoNewsCode/core v0.12.1/go.mod h1:XsqwenXsqmdoBkE2lx4Yo7UeqQ6V7M+g8831kse/SQk=
 github.com/DoNewsCode/core-processor v0.2.1 h1:TMnlbrlmvBpCkK+vlpMB9evj/bnRLOGVzNvGr8pJgeA=
 github.com/DoNewsCode/core-processor v0.2.1/go.mod h1:9FuG2KOwayPZ34w7IoJEwwkqTID4viqb0k2FOyBXP28=
 github.com/DoNewsCode/core-processor v0.2.5 h1:Fug1Kh0RXBnLecOiVU+cNGGlLaTbd18jqBvPxK4t2wc=
