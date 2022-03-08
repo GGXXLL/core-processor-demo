@@ -5,15 +5,13 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/DoNewsCode/core/logging"
 	"github.com/ggxxll/core-processor-demo/entity"
-	"github.com/go-kit/kit/log"
 	"github.com/segmentio/kafka-go"
 	"github.com/stretchr/testify/assert"
 )
 
 func Test_fooHandler_Handle(t *testing.T) {
-	handler := fooHandler{logger: logging.WithLevel(log.NewNopLogger())}
+	handler := fooHandler{}
 	cases := []struct {
 		name   string
 		data   *entity.Example
