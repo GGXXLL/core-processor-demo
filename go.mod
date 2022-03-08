@@ -3,14 +3,14 @@ module github.com/ggxxll/core-processor-demo
 go 1.17
 
 require (
-	github.com/DoNewsCode/core v0.10.4
-	github.com/DoNewsCode/core-processor v0.2.1
+	github.com/DoNewsCode/core v0.12.1
+	github.com/DoNewsCode/core-processor v0.2.5
 	github.com/go-kit/kit v0.12.0
-	github.com/segmentio/kafka-go v0.4.25
-	github.com/spf13/cobra v1.2.1
+	github.com/segmentio/kafka-go v0.4.30
+	github.com/spf13/cobra v1.3.0
 	github.com/stretchr/testify v1.7.0
-	gorm.io/driver/sqlite v1.1.6
-	gorm.io/gorm v1.22.3
+	gorm.io/driver/sqlite v1.3.1
+	gorm.io/gorm v1.23.2
 )
 
 require (
@@ -25,9 +25,8 @@ require (
 	github.com/go-gormigrate/gormigrate/v2 v2.0.0 // indirect
 	github.com/go-kit/log v0.2.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
-	github.com/go-sql-driver/mysql v1.5.0 // indirect
+	github.com/go-sql-driver/mysql v1.6.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
-	github.com/golang/snappy v0.0.4 // indirect
 	github.com/gorilla/handlers v1.5.1 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
 	github.com/hashicorp/go-version v1.3.0 // indirect
@@ -35,18 +34,18 @@ require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jackc/pgx/v4 v4.11.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.2 // indirect
-	github.com/klauspost/compress v1.13.6 // indirect
-	github.com/knadh/koanf v1.3.3 // indirect
-	github.com/mattn/go-sqlite3 v1.14.8 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
+	github.com/klauspost/compress v1.15.0 // indirect
+	github.com/knadh/koanf v1.4.0 // indirect
+	github.com/mattn/go-sqlite3 v1.14.12 // indirect
 	github.com/matttproud/golang_protobuf_extensions v1.0.1 // indirect
 	github.com/mitchellh/copystructure v1.2.0 // indirect
-	github.com/mitchellh/mapstructure v1.4.2 // indirect
+	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/mitchellh/reflectwalk v1.0.2 // indirect
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/opentracing-contrib/go-stdlib v1.0.0 // indirect
 	github.com/opentracing/opentracing-go v1.2.0 // indirect
-	github.com/pierrec/lz4 v2.6.1+incompatible // indirect
+	github.com/pierrec/lz4/v4 v4.1.14 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	github.com/prometheus/client_golang v1.11.0 // indirect
@@ -55,17 +54,16 @@ require (
 	github.com/prometheus/procfs v0.7.3 // indirect
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
-	go.uber.org/dig v1.13.0 // indirect
-	golang.org/x/net v0.0.0-20211123203042-d83791d6bcd9 // indirect
+	go.uber.org/dig v1.14.0 // indirect
+	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
-	golang.org/x/sys v0.0.0-20211124211545-fe61309f8881 // indirect
+	golang.org/x/sys v0.0.0-20220307203707-22a9840ba4d7 // indirect
 	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/tools v0.1.5 // indirect
-	google.golang.org/genproto v0.0.0-20211118181313-81c1377c94b1 // indirect
-	google.golang.org/grpc v1.42.0 // indirect
+	google.golang.org/genproto v0.0.0-20220307174427-659dce7fcb03 // indirect
+	google.golang.org/grpc v1.44.0 // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	gorm.io/driver/clickhouse v0.1.0 // indirect
-	gorm.io/driver/mysql v1.0.4 // indirect
+	gorm.io/driver/mysql v1.3.2 // indirect
 )

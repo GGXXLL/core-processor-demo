@@ -3,23 +3,20 @@ package handler
 import (
 	"context"
 	"encoding/json"
+	"fmt"
 
 	processor "github.com/DoNewsCode/core-processor"
-	"github.com/DoNewsCode/core/logging"
-
 	"github.com/ggxxll/core-processor-demo/entity"
-	"github.com/go-kit/kit/log"
 	"github.com/segmentio/kafka-go"
 )
 
 // fooHandler implement processor.Handler
 type fooHandler struct {
-	logger logging.LevelLogger
 }
 
-func newFooHandler(logger log.Logger) processor.Out {
+func newFooHandler() processor.Out {
 	return processor.NewOut(
-		&fooHandler{logger: logging.WithLevel(logger)},
+		&fooHandler{},
 	)
 }
 
@@ -36,14 +33,18 @@ func (h *fooHandler) Handle(ctx context.Context, msg *kafka.Message) (interface{
 	// decode
 	e := entity.Example{}
 	if err := json.Unmarshal(msg.Value, &e); err != nil {
-		h.logger.Err(err)
 		return nil, err
 	}
 
-	// filter dirty data
+	// discard unwanted data
 	if e.Name == "" {
-		return nil, nil
+		return nil, fmt.Errorf("dirty data")
 	}
+	// If unexpected data is encountered, an exit error is thrown
+	if e.Name == "123" {
+		return nil, processor.NewFatalErr(fmt.Errorf("error data"))
+	}
+
 	// do something
 
 	return &e, nil

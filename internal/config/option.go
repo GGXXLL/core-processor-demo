@@ -8,14 +8,16 @@ type Option func(c Core)
 // Core the application core interface
 type Core interface {
 	Provide(deps di.Deps)
-	AddModule(modules ...interface{})
+	AddModule(modules interface{})
 	AddModuleFunc(constructor interface{})
 }
 
 // Modules register modules
 func Modules(modules ...interface{}) Option {
 	return func(c Core) {
-		c.AddModule(modules...)
+		for i := range modules {
+			c.AddModule(modules[i])
+		}
 	}
 }
 
