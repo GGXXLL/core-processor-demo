@@ -10,7 +10,7 @@ require (
 	github.com/spf13/cobra v1.3.0
 	github.com/stretchr/testify v1.7.0
 	gorm.io/driver/sqlite v1.1.6
-	gorm.io/gorm v1.22.3
+	gorm.io/gorm v1.23.2
 )
 
 require (
@@ -35,7 +35,7 @@ require (
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jackc/pgx/v4 v4.11.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
-	github.com/jinzhu/now v1.1.2 // indirect
+	github.com/jinzhu/now v1.1.4 // indirect
 	github.com/klauspost/compress v1.14.1 // indirect
 	github.com/knadh/koanf v1.4.0 // indirect
 	github.com/mattn/go-sqlite3 v1.14.8 // indirect
