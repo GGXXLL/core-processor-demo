@@ -5,7 +5,6 @@ go 1.17
 require (
 	github.com/DoNewsCode/core v0.12.1
 	github.com/DoNewsCode/core-processor v0.2.5
-	github.com/go-kit/kit v0.12.0
 	github.com/segmentio/kafka-go v0.4.30
 	github.com/spf13/cobra v1.3.0
 	github.com/stretchr/testify v1.7.0
@@ -23,6 +22,7 @@ require (
 	github.com/felixge/httpsnoop v1.0.1 // indirect
 	github.com/fsnotify/fsnotify v1.5.1 // indirect
 	github.com/go-gormigrate/gormigrate/v2 v2.0.0 // indirect
+	github.com/go-kit/kit v0.12.0 // indirect
 	github.com/go-kit/log v0.2.0 // indirect
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
 	github.com/go-sql-driver/mysql v1.6.0 // indirect
