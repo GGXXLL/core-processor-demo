@@ -3,6 +3,7 @@ package handler
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 
 	processor "github.com/DoNewsCode/core-processor"
@@ -38,7 +39,7 @@ func (h *fooHandler) Handle(ctx context.Context, msg *kafka.Message) (interface{
 
 	// discard unwanted data
 	if e.Name == "" {
-		return nil, fmt.Errorf("dirty data")
+		return nil, errors.New("dirty data")
 	}
 	// If unexpected data is encountered, an exit error is thrown
 	if e.Name == "123" {
