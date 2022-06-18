@@ -9,7 +9,7 @@ require (
 	github.com/spf13/cobra v1.3.0
 	github.com/stretchr/testify v1.7.0
 	gorm.io/driver/sqlite v1.3.1
-	gorm.io/gorm v1.23.2
+	gorm.io/gorm v1.23.6
 )
 
 require (
