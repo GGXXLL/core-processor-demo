@@ -56,6 +56,8 @@ github.com/DataDog/datadog-go v3.2.0+incompatible/go.mod h1:LButxg5PwREeZtORoXG3
 github.com/DoNewsCode/core v0.11.1/go.mod h1:Kna15zPRiR+7iEzGyTHX83fAEjH8gcqJa91UbDa6Wuo=
 github.com/DoNewsCode/core v0.12.1 h1:wvXtpv15GKYPCdGxwAxmyQsX4yR2ZbKthxfkI+Q2aBo=
 github.com/DoNewsCode/core v0.12.1/go.mod h1:XsqwenXsqmdoBkE2lx4Yo7UeqQ6V7M+g8831kse/SQk=
+github.com/DoNewsCode/core v0.12.3 h1:HImd85yFc8FsPo7KQPMOQQ14VbolFtsbinrR1PUKwFI=
+github.com/DoNewsCode/core v0.12.3/go.mod h1:XsqwenXsqmdoBkE2lx4Yo7UeqQ6V7M+g8831kse/SQk=
 github.com/DoNewsCode/core-processor v0.2.5 h1:Fug1Kh0RXBnLecOiVU+cNGGlLaTbd18jqBvPxK4t2wc=
 github.com/DoNewsCode/core-processor v0.2.5/go.mod h1:ZHOUaNJpALEMuoo/nRJC3cE3l2d9IsXswgJG4aHYNV4=
 github.com/HdrHistogram/hdrhistogram-go v1.1.0/go.mod h1:yDgFjdqOqDEKOvasDdhWNXYg9BVp4O+o5f6V/ehm6Oo=
