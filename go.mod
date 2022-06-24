@@ -6,7 +6,7 @@ require (
 	github.com/DoNewsCode/core v0.12.1
 	github.com/DoNewsCode/core-processor v0.2.5
 	github.com/segmentio/kafka-go v0.4.30
-	github.com/spf13/cobra v1.3.0
+	github.com/spf13/cobra v1.5.0
 	github.com/stretchr/testify v1.7.0
 	gorm.io/driver/sqlite v1.3.1
 	gorm.io/gorm v1.23.2
