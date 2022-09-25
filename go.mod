@@ -1,6 +1,6 @@
 module github.com/ggxxll/core-processor-demo
 
-go 1.17
+go 1.19
 
 require (
 	github.com/DoNewsCode/core v0.12.1
