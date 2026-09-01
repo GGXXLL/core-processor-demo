@@ -7,7 +7,7 @@ require (
 	github.com/DoNewsCode/core-processor v0.2.5
 	github.com/segmentio/kafka-go v0.4.30
 	github.com/spf13/cobra v1.3.0
-	github.com/stretchr/testify v1.7.0
+	github.com/stretchr/testify v1.12.1
 	gorm.io/driver/sqlite v1.3.1
 	gorm.io/gorm v1.23.2
 )
@@ -55,6 +55,7 @@ require (
 	github.com/robfig/cron/v3 v3.0.1 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	go.uber.org/dig v1.14.0 // indirect
+	go.yaml.in/yaml/v3 v3.0.5 // indirect
 	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
 	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c // indirect
 	golang.org/x/sys v0.0.0-20220307203707-22a9840ba4d7 // indirect
