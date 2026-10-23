@@ -3,7 +3,7 @@ module github.com/ggxxll/core-processor-demo
 go 1.17
 
 require (
-	github.com/DoNewsCode/core v0.12.1
+	github.com/DoNewsCode/core v0.12.3
 	github.com/DoNewsCode/core-processor v0.2.5
 	github.com/segmentio/kafka-go v0.4.30
 	github.com/spf13/cobra v1.3.0
